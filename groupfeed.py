@@ -1,6 +1,6 @@
 import facebook
 import requests
-token = 'EAANUNvRDB44BANKv4qNhc510QAZClA0FmHsi1lPh9dX4SZBSTzwjIqsSI3ejxZA2SO8sFNOjQfHXn4bl0nBvPn7ZAO4hISFwfzkvIJAQZB8o6UlASGIT2ZABQlg9L71m25fWwQc7DxP4MpFZCBN6AXLGz9OxhXhPBBYavemb2NkmVa7QnCPq87HFRpnV6r3l0oZD'
+token = '' #user access token here
 graph = facebook.GraphAPI(access_token=token )
 #version="2.11"
 group_id = '349554945138653'
@@ -9,4 +9,14 @@ group_id = '349554945138653'
 
 
 groups_feed = requests.get("https://graph.facebook.com/v2.11/" + group_id +"/feed?access_token=" + token)
-print(groups_feed.json())
+print(groups_feed.json()) # to get the feed data per page
+
+# To give the name, value pair for each feed.
+lst = ['story', 'id' , 'updated_time', 'message']
+
+for x in groups_feed.json()['data']:
+    try:
+        for y in lst:
+            print (y + ":" + x[y])
+    except KeyError as e:
+        print(e)
