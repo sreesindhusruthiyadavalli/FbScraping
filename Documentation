@@ -1,0 +1,13 @@
+Install facebook-sdk 
+  pip install facebook-sdk (python)
+  !pip install facebook-sdk(anaconda ipython shell)
+  
+Run the groupfeed.py
+
+
+References:
+
+https://facebook-sdk.readthedocs.io/en/latest/install.html#installing-from-git
+http://facebook-sdk.readthedocs.io/en/latest/api.html
+For access-token :https://towardsdatascience.com/how-to-use-facebook-graph-api-and-extract-data-using-python-1839e19d6999
+  
